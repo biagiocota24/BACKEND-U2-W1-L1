@@ -12,11 +12,8 @@ public class Application {
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
-
-        User user = context.getBean(User.class);
-
-        System.out.println(user.getNome());
-
+        Menu menu = context.getBean(Menu.class);
+        menu.stampaMenu();
 
     }
 }
