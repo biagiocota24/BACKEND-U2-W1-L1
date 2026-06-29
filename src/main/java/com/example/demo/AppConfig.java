@@ -35,17 +35,22 @@ public class AppConfig {
         return new Topping("Gorgonzola", 1.1, 90);
     }
 
+    @Bean
+    public Topping salamePiccante() {
+        return new Topping("Salame piccante", 1.5, 100);
+    }
+
     // ===================== PIZZE =====================
 
     @Bean
     public Pizza margherita() {
-        return new Pizza("Margherita", 5.0);
+        return new Pizza("Margherita");
         // nessun extra: solo pomodoro e mozzarella, come da base dell'esercizio
     }
 
     @Bean
     public Pizza hawaiian(Topping prosciutto, Topping ananas) {
-        Pizza p = new Pizza("Hawaiian", 5.0);
+        Pizza p = new Pizza("Hawaiian");
         p.addExtra(prosciutto);
         p.addExtra(ananas);
         return p;
@@ -53,7 +58,7 @@ public class AppConfig {
 
     @Bean
     public Pizza boscaiola(Topping funghi, Topping wurstel) {
-        Pizza p = new Pizza("Boscaiola", 5.5);
+        Pizza p = new Pizza("Boscaiola");
         p.addExtra(funghi);
         p.addExtra(wurstel);
         return p;
@@ -61,7 +66,7 @@ public class AppConfig {
 
     @Bean
     public Pizza doppioProsciutto(Topping prosciutto) {
-        Pizza p = new Pizza("Doppio Prosciutto", 5.0);
+        Pizza p = new Pizza("Doppio Prosciutto");
         p.addExtra(prosciutto);
         p.addExtra(prosciutto); // stesso bean, aggiunto due volte
         return p;
@@ -69,7 +74,7 @@ public class AppConfig {
 
     @Bean
     public Pizza quattroGusti(Topping prosciutto, Topping funghi, Topping gorgonzola, Topping ananas) {
-        Pizza p = new Pizza("Quattro Gusti", 6.5);
+        Pizza p = new Pizza("Quattro Gusti");
         p.addExtra(prosciutto);
         p.addExtra(funghi);
         p.addExtra(gorgonzola);
@@ -77,6 +82,12 @@ public class AppConfig {
         return p;
     }
 
+    @Bean
+    public Pizza diavola(Topping salamePiccante) {
+        Pizza p = new Pizza("Diavola");
+        p.addExtra(salamePiccante);
+        return p;
+    }
     // ===================== DRINKS =====================
 
     @Bean

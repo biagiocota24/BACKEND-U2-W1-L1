@@ -17,6 +17,6 @@ public class Drink extends ArticoloMenu {
     }
 
     public void showDrink() {
-        System.out.println(this.getName() + " (" + this.size + "l)" + "      " + this.getCalories() + "      " + this.getPrice());
+        System.out.println(this.getName() + " (" + this.size + "l)" + "      " + this.getCalories() + "      " + this.getPrice()+ "€");
     }
 }

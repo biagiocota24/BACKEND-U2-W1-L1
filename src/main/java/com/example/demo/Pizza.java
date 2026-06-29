@@ -7,8 +7,8 @@ import java.util.stream.Collectors;
 public class Pizza extends ArticoloMenu {
     private List<Topping> extras;
 
-    public Pizza(String name, double price) {
-        super(name, price, 600);
+    public Pizza(String name) {
+        super(name, 4.50, 600);
         this.extras = new ArrayList<>();
         this.extras.add(new Topping("Pomodoro", 0, 40));
         this.extras.add(new Topping("mozzarella", 0, 70));
@@ -34,6 +34,6 @@ public class Pizza extends ArticoloMenu {
 
     public void showPizza() {
         String nomiTopping = this.extras.stream().map(topping -> topping.getName()).collect(Collectors.joining(", "));
-        System.out.println(this.getName() + "(" + nomiTopping + ")" + "      " + this.getCalories() + "      " + this.getPrice());
+        System.out.println(this.getName() + "(" + nomiTopping + ")" + "      " + this.getCalories() + "      " + this.getPrice() + "€");
     }
 }

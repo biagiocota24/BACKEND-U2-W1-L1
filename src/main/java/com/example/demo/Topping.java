@@ -8,7 +8,7 @@ public class Topping extends ArticoloMenu {
 
 
     public void showTopping() {
-        System.out.println(this.getName() + "      " + this.getCalories() + "      " + this.getPrice());
+        System.out.println(this.getName() + "      " + this.getCalories() + "      " + this.getPrice() + "€");
     }
 
 
