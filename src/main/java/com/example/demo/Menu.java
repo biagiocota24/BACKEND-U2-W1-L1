@@ -21,4 +21,28 @@ public class Menu {
         System.out.println("----------BEVANDE------------");
         this.bevande.forEach(drink -> drink.showDrink());
     }
+
+    public List<Pizza> getPizze() {
+        return pizze;
+    }
+
+    public void setPizze(List<Pizza> pizze) {
+        this.pizze = pizze;
+    }
+
+    public List<Topping> getExtras() {
+        return extras;
+    }
+
+    public void setExtras(List<Topping> extras) {
+        this.extras = extras;
+    }
+
+    public List<Drink> getBevande() {
+        return bevande;
+    }
+
+    public void setBevande(List<Drink> bevande) {
+        this.bevande = bevande;
+    }
 }

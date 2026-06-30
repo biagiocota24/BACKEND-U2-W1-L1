@@ -1,17 +1,21 @@
 package com.example.demo;
 
+import enums.GrandezzaPizza;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class Pizza extends ArticoloMenu {
     private List<Topping> extras;
+    private GrandezzaPizza size;
 
     public Pizza(String name) {
         super(name, 4.50, 600);
         this.extras = new ArrayList<>();
         this.extras.add(new Topping("Pomodoro", 0, 40));
         this.extras.add(new Topping("mozzarella", 0, 70));
+        this.size = GrandezzaPizza.NORMALE;
     }
 
     public List<Topping> getExtras() {
