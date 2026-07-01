@@ -22,10 +22,11 @@ public class GestoreOrdini {
     }
 
     public void creaOrdine(List<ArticoloMenu> listaArticoli, Tavolo tavolo) {
-        Ordine nuovoOrdine = new Ordine(listaArticoli, tavolo , prezzoCoperto);
+        Ordine nuovoOrdine = new Ordine(listaArticoli, tavolo, prezzoCoperto);
         this.listaOrdini.add(nuovoOrdine);
         tavolo.setStatoTavolo(StatoTavolo.OCCUPATO);
     }
+
 
     public List<Ordine> getListaOrdini() {
         return listaOrdini;

@@ -44,13 +44,13 @@ public class AppConfig {
 
     @Bean
     public Pizza margherita() {
-        return new Pizza("Margherita");
+        return new Pizza("Margherita", false);
         // nessun extra: solo pomodoro e mozzarella, come da base dell'esercizio
     }
 
     @Bean
     public Pizza hawaiian(Topping prosciutto, Topping ananas) {
-        Pizza p = new Pizza("Hawaiian");
+        Pizza p = new Pizza("Hawaiian", false);
         p.addExtra(prosciutto);
         p.addExtra(ananas);
         return p;
@@ -58,7 +58,7 @@ public class AppConfig {
 
     @Bean
     public Pizza boscaiola(Topping funghi, Topping wurstel) {
-        Pizza p = new Pizza("Boscaiola");
+        Pizza p = new Pizza("Boscaiola", false);
         p.addExtra(funghi);
         p.addExtra(wurstel);
         return p;
@@ -66,7 +66,7 @@ public class AppConfig {
 
     @Bean
     public Pizza doppioProsciutto(Topping prosciutto) {
-        Pizza p = new Pizza("Doppio Prosciutto");
+        Pizza p = new Pizza("Doppio Prosciutto", false);
         p.addExtra(prosciutto);
         p.addExtra(prosciutto); // stesso bean, aggiunto due volte
         return p;
@@ -74,7 +74,7 @@ public class AppConfig {
 
     @Bean
     public Pizza quattroGusti(Topping prosciutto, Topping funghi, Topping gorgonzola, Topping ananas) {
-        Pizza p = new Pizza("Quattro Gusti");
+        Pizza p = new Pizza("Quattro Gusti", false);
         p.addExtra(prosciutto);
         p.addExtra(funghi);
         p.addExtra(gorgonzola);
@@ -84,7 +84,54 @@ public class AppConfig {
 
     @Bean
     public Pizza diavola(Topping salamePiccante) {
-        Pizza p = new Pizza("Diavola");
+        Pizza p = new Pizza("Diavola", false);
+        p.addExtra(salamePiccante);
+        return p;
+    }
+
+    @Bean
+    public Pizza margheritaXL() {
+        return new Pizza("margheritaXL", true);
+        // nessun extra: solo pomodoro e mozzarella, come da base dell'esercizio
+    }
+
+    @Bean
+    public Pizza hawaiianXL(Topping prosciutto, Topping ananas) {
+        Pizza p = new Pizza("hawaiianXL", true);
+        p.addExtra(prosciutto);
+        p.addExtra(ananas);
+        return p;
+    }
+
+    @Bean
+    public Pizza boscaiolaXL(Topping funghi, Topping wurstel) {
+        Pizza p = new Pizza("boscaiolaXL", true);
+        p.addExtra(funghi);
+        p.addExtra(wurstel);
+        return p;
+    }
+
+    @Bean
+    public Pizza doppioProsciuttoXL(Topping prosciutto) {
+        Pizza p = new Pizza("doppio ProsciuttoXL", true);
+        p.addExtra(prosciutto);
+        p.addExtra(prosciutto); // stesso bean, aggiunto due volte
+        return p;
+    }
+
+    @Bean
+    public Pizza quattroGustiXL(Topping prosciutto, Topping funghi, Topping gorgonzola, Topping ananas) {
+        Pizza p = new Pizza("quattro Gusti XL", true);
+        p.addExtra(prosciutto);
+        p.addExtra(funghi);
+        p.addExtra(gorgonzola);
+        p.addExtra(ananas);
+        return p;
+    }
+
+    @Bean
+    public Pizza diavolaXL(Topping salamePiccante) {
+        Pizza p = new Pizza("diavola XL", true);
         p.addExtra(salamePiccante);
         return p;
     }

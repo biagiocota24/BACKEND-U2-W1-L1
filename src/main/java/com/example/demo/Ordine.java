@@ -46,6 +46,23 @@ public class Ordine {
                 '}';
     }
 
+    public void showOrdine() {
+        System.out.println("Stato ordine => " + this.statoOrdine);
+        System.out.println("Numero tavolo => " + this.tavolo.getNumeroTavolo());
+        System.out.println("Numero coperti => " + this.tavolo.getCoperti());
+        System.out.println("Ora acquisizione => " + this.oraOrdine);
+        System.out.println("Lista :");
+        this.articoliOrdine.forEach(articoloMenu -> {
+            if (articoloMenu instanceof Pizza) {
+                ((Pizza) articoloMenu).showPizza();
+            }
+            if (articoloMenu instanceof Drink) {
+                ((Drink) articoloMenu).showDrink();
+            }
+        });
+
+    }
+
 
     public List<ArticoloMenu> getArticoliOrdine() {
         return articoliOrdine;

@@ -15,7 +15,9 @@ public class Menu {
 
     public void stampaMenu() {
         System.out.println("----------PIZZE------------");
-        this.pizze.forEach(pizza -> pizza.showPizza());
+        this.pizze.stream().filter(pizza -> pizza.isXL() == false).forEach(pizza -> pizza.showPizza());
+        System.out.println("----------PIZZE-XL------------");
+        this.pizze.stream().filter(pizza -> pizza.isXL() == true).forEach(pizza -> pizza.showPizza());
         System.out.println("----------EXTRAS------------");
         this.extras.forEach(topping -> topping.showTopping());
         System.out.println("----------BEVANDE------------");
@@ -23,7 +25,11 @@ public class Menu {
     }
 
     public List<Pizza> getPizze() {
-        return pizze;
+        return this.pizze.stream().filter(pizza -> pizza.isXL() == false).toList();
+    }
+
+    public List<Pizza> getPizzeXL() {
+        return this.pizze.stream().filter(pizza -> pizza.isXL() == true).toList();
     }
 
     public void setPizze(List<Pizza> pizze) {
