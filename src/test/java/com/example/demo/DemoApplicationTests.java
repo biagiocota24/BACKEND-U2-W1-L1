@@ -4,6 +4,7 @@ import ch.qos.logback.classic.spi.PackagingDataCalculator;
 import enums.StatoTavolo;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
@@ -38,7 +39,7 @@ class DemoApplicationTests {
     private double prezzoCoperto;
 
     @BeforeEach
-    void setUp() {
+    void oggetti() {
 
         prosciutto = new Topping("Prosciutto", 1.0, 80);
         ananas = new Topping("Ananas", 0.8, 40);
@@ -91,6 +92,13 @@ class DemoApplicationTests {
 
     @Test
     void verificaSommaTotaleOrdine() {
+        Ordine ordine = new Ordine(listaArticoli, tavolo, prezzoCoperto);
+        double conto = ordine.getSommaOrdine();
+        double contoAmano = listaArticoli.stream().mapToDouble(articolo -> articolo.getPrice()).sum() + tavolo.getCoperti() * prezzoCoperto;
+        assertEquals(contoAmano, conto);
     }
+
+    @ParameterizedTest
+    void 
 }
 
