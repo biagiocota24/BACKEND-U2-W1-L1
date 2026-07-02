@@ -1,11 +1,11 @@
 package com.example.demo;
 
-import ch.qos.logback.classic.spi.PackagingDataCalculator;
 import enums.StatoTavolo;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.ApplicationContext;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +14,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 class DemoApplicationTests {
+
+    @Autowired
+    private ApplicationContext ctx;
 
     // Topping riutilizzabili
     private Topping prosciutto;
@@ -40,7 +43,7 @@ class DemoApplicationTests {
 
     @BeforeEach
     void oggetti() {
-
+        Pizza pizzabean = ctx.getBean("margherita", Pizza.class);
         prosciutto = new Topping("Prosciutto", 1.0, 80);
         ananas = new Topping("Ananas", 0.8, 40);
         funghi = new Topping("Funghi", 0.7, 25);
@@ -98,7 +101,6 @@ class DemoApplicationTests {
         assertEquals(contoAmano, conto);
     }
 
-    @ParameterizedTest
-    void 
+
 }
 

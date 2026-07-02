@@ -162,8 +162,8 @@ public class AppConfig {
         return new Drink("Tè Freddo", 2.5, 90, 0.33);
     }
 
-    @Bean
-    public Menu menu(List<Pizza> pizze, List<Topping> extras, List<Drink> drinks) {
-        return new Menu(pizze, extras, drinks);
-    }
+//    @Bean
+//    public Menu menu(List<Pizza> pizze, List<Topping> extras, List<Drink> drinks) {
+//        return new Menu(pizze, extras, drinks);
+//    }
 }
